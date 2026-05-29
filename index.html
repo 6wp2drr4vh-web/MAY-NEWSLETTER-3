@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ritual Studios — Winter 2026 Newsletter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Cinzel:wght@400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* warm winter palette */
+    --cream:#F1EBE1;
+    --beige:#E4DAC9;
+    --beige-deep:#D6C9B4;
+    --brown:#5C4636;
+    --brown-deep:#3B2C20;
+    --charcoal:#2A2622;
+    --red:#5F2421;        /* deep mahogany red */
+    --red-soft:#7C322D;
+    --ink:#2A2622;
+    --soft:#6f6353;
+    --line:#cdbfa9;
+    --rust:#8E332C;   /* mahogany accent for dark backgrounds */
+    --gold:#8E332C;   /* alias kept for existing rules — now mahogany red */
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  img{display:block;max-width:100%;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Jost',sans-serif;
+    font-weight:300;
+    line-height:1.7;
+    letter-spacing:.02em;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:.01em;}
+  a{color:inherit;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+  .eyebrow{font-size:.72rem;letter-spacing:.42em;text-transform:uppercase;color:var(--brown);}
+
+  /* HEADER */
+  header{padding:42px 0 26px;text-align:center;background:var(--cream);}
+  .logo-img{max-height:54px;width:auto;margin:0 auto 8px;}
+  .mark{font-family:'Cormorant Garamond',serif;font-size:1.9rem;letter-spacing:.55em;text-transform:uppercase;padding-left:.55em;color:var(--brown-deep);}
+  .mark small{display:block;font-family:'Jost';font-size:.62rem;letter-spacing:.4em;color:var(--brown);margin-top:10px;padding-left:.4em;}
+  .issue{margin-top:18px;font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--brown);}
+
+  /* HERO */
+  .hero{
+    position:relative;text-align:center;color:var(--cream);
+    min-height:560px;display:flex;align-items:center;justify-content:center;
+    background:var(--brown-deep);
+    background-image:linear-gradient(rgba(30,28,25,.40),rgba(30,28,25,.56)), url('images/banner-socks-bw.jpg');
+    background-size:cover;background-position:center;
+  }
+  .hero-inner{position:relative;z-index:2;padding:60px 28px;}
+  .hero .eyebrow{color:#e8d8bf;}
+  .hero h1{font-size:clamp(2.8rem,6vw,4.6rem);line-height:1.04;text-shadow:0 2px 30px rgba(0,0,0,.3);}
+  .hero h1 em{font-style:italic;color:var(--gold);}
+  .hero p{max-width:540px;margin:22px auto 0;color:#f1e8da;font-size:1.02rem;}
+  .btn{
+    display:inline-block;margin-top:30px;padding:15px 40px;
+    background:var(--red);color:var(--cream);text-decoration:none;
+    font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+    transition:background .3s ease;
+  }
+  .btn:hover{background:var(--red-soft);}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--brown);}
+  .btn.ghost:hover{background:var(--brown);color:var(--cream);}
+  .hero .btn{background:var(--cream);color:var(--brown-deep);}
+  .hero .btn:hover{background:var(--gold);color:var(--brown-deep);}
+
+  section{padding:72px 0;border-bottom:1px solid var(--line);}
+  .section-head{text-align:center;margin-bottom:46px;}
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-top:12px;color:var(--brown-deep);}
+  .lead{max-width:620px;margin:0 auto;color:var(--soft);text-align:center;}
+
+  /* OFFER — socks */
+  .offer{background:var(--red);color:var(--cream);border:none;padding:0;}
+  .offer .split{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;}
+  .offer .socks{
+    background:var(--beige) url('images/ritual-socks.jpg') center/cover no-repeat;
+    min-height:480px;
+  }
+  .offer .txt{padding:66px 54px;display:flex;flex-direction:column;justify-content:center;text-align:left;}
+  .offer .eyebrow{color:#f0d9bb;}
+  .offer h2{font-size:clamp(2.1rem,4.4vw,3.1rem);color:var(--cream);margin:14px 0 10px;line-height:1.05;}
+  .offer h2 em{font-style:italic;color:#f3e2c4;}
+  .offer p{color:#f3e5d6;margin-top:4px;}
+  .offer .btn{background:var(--cream);color:var(--red);margin-top:28px;align-self:flex-start;}
+  .offer .btn:hover{background:var(--gold);color:var(--brown-deep);}
+  .offer .fine{margin-top:20px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#e7c9a8;}
+
+  /* TRAININGS */
+  .flag{display:inline-block;background:var(--red);color:var(--cream);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;padding:6px 14px;margin-bottom:18px;}
+  .yin{background:var(--beige-deep);color:var(--brown-deep);padding:48px;text-align:center;border:1px solid var(--line);}
+  .yin h3{font-size:2.4rem;font-style:italic;}
+  .yin p{max-width:520px;margin:14px auto 0;color:var(--brown);}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);margin-top:38px;border:1px solid var(--line);}
+  .grid .cell{background:var(--cream);padding:30px 28px;}
+  .grid .cell h4{font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:8px;color:var(--brown-deep);}
+  .grid .cell span{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brown);}
+  .grid .cell p{margin:8px 0 14px;color:var(--soft);font-size:.92rem;}
+  .perk{text-align:center;margin-top:30px;color:var(--soft);font-size:.9rem;}
+
+  /* IMMERSION */
+  .immersion{background:var(--charcoal);color:var(--cream);border:none;padding:0;}
+  .imm-hero{
+    position:relative;min-height:560px;display:flex;align-items:flex-end;justify-content:center;text-align:center;
+    background:linear-gradient(to bottom,rgba(26,20,14,.20),rgba(26,20,14,.32) 40%,rgba(26,20,14,.94)), url('images/retreat-cottage-golden.jpg');
+    background-size:cover;background-position:center;
+  }
+  .imm-hero .inner{position:relative;z-index:2;padding:0 28px 64px;max-width:880px;}
+  .immersion .kicker{font-family:'Cormorant Garamond';font-style:italic;letter-spacing:.34em;color:var(--gold);font-size:1rem;margin-bottom:16px;}
+  .imm-hero h2{font-family:'Cinzel',serif;font-size:clamp(2.2rem,5.5vw,4rem);line-height:1.02;letter-spacing:.04em;color:var(--cream);}
+  .imm-hero h2 em{display:block;font-family:'Cormorant Garamond';font-style:italic;color:var(--gold);font-size:.5em;margin-top:.22em;letter-spacing:.02em;}
+  .imm-tag{display:inline-block;border:1px solid rgba(200,146,58,.5);padding:.66rem 2rem;font-family:'Cinzel';font-size:.74rem;letter-spacing:.16em;color:var(--gold);margin-top:24px;}
+  .imm-body{max-width:840px;margin:0 auto;padding:66px 28px 30px;text-align:center;}
+  .imm-body p{color:#e8ddcd;opacity:.9;font-size:1.08rem;line-height:1.9;margin-bottom:1.4rem;}
+  .imm-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(241,235,225,.18);}
+  .imm-gallery img{width:100%;height:280px;object-fit:cover;}
+  .imm-incl{max-width:840px;margin:0 auto;padding:40px 28px 0;}
+  .imm-incl h3{text-align:center;font-family:'Cinzel';font-size:.8rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:22px;}
+  .imm-incl ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.6rem 2rem;max-width:760px;margin:0 auto;}
+  .imm-incl li{position:relative;padding-left:1.3rem;color:#ddd2c2;font-size:.95rem;line-height:1.55;}
+  .imm-incl li:before{content:'—';position:absolute;left:0;color:var(--gold);}
+  .imm-register{max-width:840px;margin:0 auto;padding:48px 28px 70px;text-align:center;}
+  .imm-register .live{font-family:'Cinzel';letter-spacing:.2em;color:var(--gold);font-size:.82rem;text-transform:uppercase;margin-bottom:14px;}
+  .imm-register .btn{background:var(--red);color:var(--cream);}
+  .imm-register .btn:hover{background:var(--red-soft);}
+  .imm-meta{color:#9a8d79;font-size:.82rem;margin-top:20px;letter-spacing:.06em;}
+
+  /* Q&A */
+  .qa{margin-top:42px;column-count:2;column-gap:40px;}
+  .qa-item{break-inside:avoid;margin-bottom:30px;}
+  .qa-item.full{column-span:all;border-top:1px solid var(--line);padding-top:28px;text-align:center;}
+  .qa .q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--red);margin-bottom:6px;}
+  .qa .a{color:var(--soft);font-size:.95rem;}
+  .qa-item.full .a{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--brown-deep);max-width:600px;margin:0 auto;}
+  @media(max-width:720px){.qa{column-count:1;}}
+
+  /* MEMBER */
+  .member{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;border:1px solid var(--line);}
+  .member .photo{background:var(--beige);min-height:540px;display:flex;}
+  .member .photo img{width:100%;height:100%;object-fit:contain;object-position:center;}
+  .member .candle{
+    position:relative;min-height:540px;
+    background:var(--brown-deep) url('images/candle.jpg') center/cover no-repeat;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+  }
+  .member .candle::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(43,32,24,.35),rgba(43,32,24,.55));}
+  .member .candle .ovl{position:relative;z-index:2;padding:30px;}
+  .member .candle .ovl .eyebrow{color:#f0d9bb;}
+  .member .candle .ovl .quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2rem;color:var(--cream);line-height:1.25;margin:16px 0;}
+  .member .candle .ovl .who{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:#e7d6bd;}
+
+  /* STUDIOS */
+  .studios{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:10px;max-width:680px;margin-left:auto;margin-right:auto;}
+  .studio{text-align:center;padding:34px 18px;border:1px solid var(--line);background:var(--cream);}
+  .studio h4{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--brown-deep);}
+  .studio p{font-size:.84rem;color:var(--soft);margin-top:6px;}
+  .styles{text-align:center;margin-top:40px;font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--soft);line-height:2;}
+
+  /* MEMBERSHIPS */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:10px;}
+  .plan{background:var(--cream);border:1px solid var(--line);padding:38px 28px;text-align:center;display:flex;flex-direction:column;}
+  .plan.feature{background:var(--beige);border-color:var(--brown);}
+  .plan .term{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brown);}
+  .plan h4{font-family:'Cormorant Garamond',serif;font-size:1.9rem;margin:12px 0;color:var(--brown-deep);}
+  .plan p{color:var(--soft);font-size:.9rem;flex:1;}
+  .plan .btn{margin-top:24px;width:100%;}
+
+  /* FOOTER */
+  footer{background:var(--brown-deep);color:#d7c7b2;text-align:center;padding:60px 28px;border:none;}
+  footer .logo-img{max-height:46px;filter:brightness(0) invert(1);opacity:.92;margin-bottom:8px;}
+  footer .mark{color:var(--cream);font-size:1.4rem;}
+  footer .links{margin:26px 0;display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:center;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;}
+  footer a{text-decoration:none;color:#d7c7b2;transition:color .3s;}
+  footer a:hover{color:var(--gold);}
+  footer .addr{font-size:.78rem;color:#9a8d79;line-height:1.9;margin-top:16px;}
+
+  @media(max-width:720px){
+    .grid,.member,.offer .split,.studios,.plans,.imm-incl ul{grid-template-columns:1fr;}
+    .imm-gallery{grid-template-columns:1fr 1fr;}
+    .member .photo,.offer .socks{min-height:340px;}
+    section{padding:56px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img class="logo-img" src="images/ritual-logo.png" alt="Ritual Studios" onerror="this.style.display='none';document.getElementById('wordmark').style.display='block';" />
+  <div class="mark" id="wordmark" style="display:none;">Ritual<small>Yoga · Pilates · Reformer · Barre</small></div>
+  <div class="issue">The Monthly Ritual — Winter 2026</div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Slow mornings · warm practice</span>
+    <h1>Stay warm <em>this winter</em>.</h1>
+    <p>As the cooler months settle in, the mat becomes a place to warm the body, steady the breath and turn inward. Here's everything moving through Ritual this season.</p>
+    <a class="btn" href="https://www.ritualyogaandpilates.com.au/palm-beach-schedule-location">View the schedule</a>
+  </div>
+</div>
+
+<!-- MEMBER OF THE MONTH -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Community</span>
+      <h2>Member of the Month</h2>
+    </div>
+    <div class="member">
+      <div class="photo"><img src="images/lisa-jolly.jpg" alt="Lisa Jolly — Member of the Month" /></div>
+      <div class="candle">
+        <div class="ovl">
+          <span class="eyebrow">Winter 2026</span>
+          <div class="quote">"follow what<br/>lights you up"</div>
+          <div class="who">Lisa Jolly · Palm Beach · member since 2020</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="qa-item">
+        <p class="q">Where did your journey with yoga begin?</p>
+        <p class="a">I was a 21-year-old working long hours in a corporate job and found yoga at my local gym. It became a regular in my life from that point onwards — a way to manage the stress and demands of life.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q">Do you remember your first class at Ritual?</p>
+        <p class="a">I'd just moved to Palm Beach from Victoria and Ritual had just opened. I felt comfortable at Ritual from the start.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q">How do you feel after class?</p>
+        <p class="a">Always better for doing a yoga class — mind, body and breath.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q">Life moves quickly. How do you make room for class?</p>
+        <p class="a">I run my own naturopathic clinic and have children, so there's always a lot on — which makes yoga even more necessary. I see it as a non-negotiable part of my weekly routine.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q">How has your practice changed you?</p>
+        <p class="a">It keeps my mind clear and takes me to a deeper understanding of life. A lot of yoga philosophy creeps into the courses and retreats I run too.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q">What does "ritual" mean to you?</p>
+        <p class="a">Regularity, preparation, consistency, presence.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q">What do you turn to outside the studio to stay well?</p>
+        <p class="a">I shop at farmers markets for fresh organic food, meditate, follow what inspires me, and choose to create consciously in my life.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q">For anyone hesitant about walking in?</p>
+        <p class="a">It's a very open and welcoming space where anyone is accepted.</p>
+      </div>
+      <div class="qa-item full">
+        <p class="q">A piece of advice that stays with you?</p>
+        <p class="a">Staying well — mentally and physically — takes constant effort, and there's no magic pill. I think the aim of the game is to follow what lights you up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER — socks -->
+<section class="offer">
+  <div class="split">
+    <div class="socks"></div>
+    <div class="txt">
+      <span class="eyebrow">The winter offer</span>
+      <h2>Sign up &amp; receive<br/><em>Ritual grip socks</em>.</h2>
+      <p>Join a weekly membership before <strong>15 June</strong> and receive a complimentary pair of Ritual signature grip socks — our most-loved studio essential, on us. A little extra warmth and grip for the season ahead.</p>
+      <a class="btn" href="https://www.ritualyogaandpilates.com.au/weekly-membership">Start a membership</a>
+      <div class="fine">New weekly memberships · offer ends 15 June 2026 · while stocks last</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAININGS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Ritual School</span>
+      <h2>Trainings on the horizon</h2>
+    </div>
+
+    <div class="yin">
+      <span class="flag">Last week to sign up · starts 6 June</span>
+      <h3>50HR Yin Teacher Training</h3>
+      <p>Across two weekends — <strong>June 6–7 &amp; June 13–14</strong>. A deep, restorative immersion in the art of stillness, fascia and long-held postures. This is the final week to claim your place.</p>
+      <a class="btn ghost" href="https://www.ritualyogaandpilates.com.au/50hour-yin-yoga-teacher-training" style="margin-top:26px;">Sign up for Yin</a>
+    </div>
+
+    <div class="grid">
+      <div class="cell">
+        <span>July 24–26 &amp; July 30–Aug 2</span>
+        <h4>Pilates Teacher Training</h4>
+        <p>Build a precise, intelligent practice and the skills to teach it. Early bird has ended — places still open.</p>
+        <a href="https://www.ritualyogaandpilates.com.au/pilates-teacher-training" style="color:var(--red);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;">Sign up →</a>
+      </div>
+      <div class="cell">
+        <span>Aug 7–10 · 14–17 · 21–24</span>
+        <h4>Yoga Teacher Training</h4>
+        <p>Our internationally accredited foundation across three weekends. Early bird has ended — places still open.</p>
+        <a href="https://www.ritualyogaandpilates.com.au/200hr-yoga-teacher-training" style="color:var(--red);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;">Sign up →</a>
+      </div>
+    </div>
+    <p class="perk">Explore all programs at <a href="https://www.ritualyogaandpilates.com.au/ritual-school-teacher-training-gold-coast" style="color:var(--red);">Ritual School</a>.</p>
+  </div>
+</section>
+
+<!-- INDIA IMMERSION -->
+<section class="immersion">
+  <div class="imm-hero">
+    <div class="inner">
+      <div class="kicker">India — Cardamom Hills</div>
+      <h2>Kerala High Country Immersion<em>A six-month journey of practice, study &amp; living lineage</em></h2>
+      <div class="imm-tag">With Rose Baudin &amp; Rose Lamont</div>
+    </div>
+  </div>
+  <div class="imm-body">
+    <p>Hidden in the mist-covered Cardamom Hills of Kerala, this six-month immersion is an invitation into a slower, deeper and more sincere relationship with yoga. Led by Rose Baudin and Rose Lamont, it weaves philosophy, practice, mentorship and study within a living lineage — drawing on Rose Baudin's 50+ years of practice and her initiation into the parampara of the Tamil Siddhas. In 2027 Rose turns 80, and this has been designed as a rare, intimate opportunity to study with her directly while her stories, insight and wisdom can still be shared this way.</p>
+    <p>Over six months, online study and practice build steadily toward a private 6-day retreat in the mountains of Kerala. With just nine bungalows available on the retreat, space is intentionally limited. Days hold yoga, pranayama, meditation, philosophy, silence, shared meals, nature walks and temple visits.</p>
+  </div>
+  <div class="imm-gallery">
+    <img src="images/retreat-teachers.jpg" alt="Rose Baudin and Rose Lamont" />
+    <img src="images/retreat-balcony.jpg" alt="Balcony with mountain view" />
+    <img src="images/retreat-interior.jpg" alt="Cottage interior" />
+  </div>
+  <div class="imm-incl">
+    <h3>The six months include</h3>
+    <ul>
+      <li>A private 6-day / 5-night retreat in the hills of Kerala</li>
+      <li>15+ hours of pre-recorded philosophy teachings with Rose Baudin</li>
+      <li>6 live online calls with Rose Baudin &amp; Rose Lamont</li>
+      <li>Personal mentorship during live calls and on retreat</li>
+      <li>A 50-hour Yoga Philosophy Certification (Yoga Alliance)</li>
+      <li>Katonah, restorative &amp; classical pranayama with Rose Lamont</li>
+      <li>Selected readings from philosophy, sacred texts &amp; poetry</li>
+      <li>A private community of sincere seekers</li>
+    </ul>
+  </div>
+  <div class="imm-register">
+    <div class="live">✦ Bookings go live Monday 1 June ✦</div>
+    <p class="lead" style="color:#ddd2c2;">Places are intentionally limited. Register your interest now and we'll be in touch the moment bookings open on Monday 1 June.</p>
+    <a class="btn" href="mailto:hello@ritualpalmbeach.com?subject=Kerala%20Immersion%20-%20Register%20Interest">Register your interest</a>
+    <div class="imm-meta">Kerala, India · Cardamom Hills, Western Ghats · just 9 bungalows available</div>
+  </div>
+</section>
+
+<!-- STUDIOS & SCHEDULE -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Where to find us</span>
+      <h2>Two studios, 150+ classes a week</h2>
+    </div>
+    <div class="studios">
+      <div class="studio">
+        <h4>Palm Beach</h4>
+        <p>9 Palm Beach Ave<br/>Yoga · Pilates · Reformer · Barre</p>
+      </div>
+      <div class="studio">
+        <h4>Robina</h4>
+        <p>Gold Coast<br/>Yoga · Pilates · Reformer</p>
+      </div>
+    </div>
+    <div class="styles">
+      Hatha · Vinyasa · Yin · Restorative<br/>
+      Pilates Mat · Reformer · Barre · Meditation
+    </div>
+    <div style="text-align:center;margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a class="btn ghost" href="https://www.ritualyogaandpilates.com.au/palm-beach-schedule-location">Palm Beach timetable</a>
+      <a class="btn ghost" href="https://www.ritualyogaandpilates.com.au/robina-schedule-location">Robina timetable</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIPS -->
+<section style="background:var(--beige);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Ways to move</span>
+      <h2>Membership options</h2>
+      <p class="lead" style="margin-top:14px;">Every weekly membership includes one workshop a month and 25% off all other workshops and events.</p>
+    </div>
+    <div class="plans">
+      <div class="plan feature">
+        <span class="term">Most flexible</span>
+        <h4>Weekly Membership</h4>
+        <p>Unlimited movement on a rolling weekly basis. Sign up before 15 June and receive your complimentary pair of Ritual grip socks.</p>
+        <a class="btn" href="https://www.ritualyogaandpilates.com.au/weekly-membership">Join now</a>
+      </div>
+      <div class="plan">
+        <span class="term">Move at your pace</span>
+        <h4>Class Packs</h4>
+        <p>Buy your classes in a pack and use them when it suits you — perfect for a flexible winter rhythm.</p>
+        <a class="btn" href="https://www.ritualyogaandpilates.com.au/packs">Shop packs</a>
+      </div>
+      <div class="plan">
+        <span class="term">New to Ritual</span>
+        <h4>Intro Offer</h4>
+        <p>The perfect first step — our Discovery Pass lets you explore the studio and find your rhythm before you commit.</p>
+        <a class="btn" href="https://www.ritualyogaandpilates.com.au/discovery-pass">Start here</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img class="logo-img" src="images/ritual-logo.png" alt="Ritual Studios" onerror="this.style.display='none';document.getElementById('footmark').style.display='block';" />
+  <div class="mark" id="footmark" style="display:none;">Ritual</div>
+  <div class="links">
+    <a href="https://www.ritualyogaandpilates.com.au/">Home</a>
+    <a href="https://www.ritualyogaandpilates.com.au/all-studios">Studios</a>
+    <a href="https://www.ritualyogaandpilates.com.au/palm-beach-schedule-location">Palm Beach Timetable</a>
+    <a href="https://www.ritualyogaandpilates.com.au/robina-schedule-location">Robina Timetable</a>
+    <a href="https://www.ritualyogaandpilates.com.au/weekly-membership">Memberships</a>
+    <a href="https://www.ritualyogaandpilates.com.au/packs">Class Packs</a>
+    <a href="https://www.ritualyogaandpilates.com.au/discovery-pass">Intro Offer</a>
+    <a href="https://www.ritualyogaandpilates.com.au/ritual-school-teacher-training-gold-coast">Ritual School</a>
+  </div>
+  <div class="addr">
+    9 Palm Beach Ave, Palm Beach · Gold Coast QLD<br/>
+    hello@ritualpalmbeach.com · ritualyogaandpilates.com.au
+  </div>
+</footer>
+
+</body>
+</html>
